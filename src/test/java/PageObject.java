@@ -18,6 +18,7 @@ public class PageObject {
 
 
   public PageObject() {
+
     System.setProperty("webdriver.chrome.driver", "src/main/resources/chromeDriver");
     driver = new ChromeDriver();
     driver.get(url);
@@ -25,6 +26,7 @@ public class PageObject {
   }
 
   public PageObject inputLoginName(String login) {
+
     logger.log(Level.INFO, "Вводим логин: " + login);
     driver.findElement(LOGIN_INPUT_FIELD).clear();
     driver.findElement(LOGIN_INPUT_FIELD).sendKeys(login);
@@ -32,6 +34,7 @@ public class PageObject {
   }
 
   public PageObject inputPassword(String password) {
+
     logger.log(Level.INFO, "Вводим пароль: " + password);
     driver.findElement(PASSWORD_INPUT_FIELD).clear();
     driver.findElement(PASSWORD_INPUT_FIELD).sendKeys(password);
@@ -39,17 +42,20 @@ public class PageObject {
   }
 
   public PageObject clickLoginButton() {
+
     logger.log(Level.INFO, "Кликаем на кнопку логин");
     driver.findElement(LOGIN_BUTTON).click();
     return this;
   }
 
   public boolean isLoginPresent() {
+
     logger.log(Level.INFO, "Проверяем, что есть элемент login-logo");
     return driver.findElement(DIV_ON_LOGIN_PAGE).isDisplayed();
   }
 
   public boolean isAppLogoPresent() {
+
     logger.log(Level.INFO, "Проверяем, что появился элемент app-logo");
     return driver.findElement(DIV_AFTER_LOGIN_PAGE).isDisplayed();
   }
