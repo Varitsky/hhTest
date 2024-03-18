@@ -3,7 +3,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
-
 import static org.testng.Assert.assertTrue;
 
 public class LessonTest {
@@ -17,7 +16,6 @@ public class LessonTest {
 
   @Test(description = "проверяем возможность логина после неверного ввода пароля")
   public void login() {
-
     var page = new PageObject();
     assertTrue(page.isLoginPresent(), "нет div login");
 
